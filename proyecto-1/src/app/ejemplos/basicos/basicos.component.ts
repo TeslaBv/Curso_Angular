@@ -6,12 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basicos.component.css']
 })
 export class BasicosComponent implements OnInit {
-  nombre : string ="Hiram Axd";
+  nombre : string ="Hiram A xd";
   correo : string = "cruzfabianhiram@gmail.com"
   edad : number = 21;
   fecha = new Date(); 
   html:string =`<strong>Texto desde html</strong>`
   paises : Array<any>;
+
+  
   constructor() { 
     this.paises=[
       {nombre:"Mexico",

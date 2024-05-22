@@ -1,0 +1,90 @@
+<h1>Interpolacion</h1>
+{{nombre}}
+<hr>
+<h1>Condicionales</h1>
+<p *ngIf="edad>=18; else edadElse">Es mayor de Edad </p>
+
+
+<h1>NgTemplate</h1>
+<ng-template #edadElse>
+    <p>No es mayor de edad</p>
+</ng-template>
+
+
+
+<hr>
+<h1>Operador Ternario</h1>
+<p>{{ (edad>=18) ? 'mayor de dedad': 'no es mayor de edad'}}</p>
+
+
+<hr>
+<h1>Switch Case</h1>
+
+<div [ngSwitch]="numero">
+    <p *ngSwitchCase="13"> El numero es 13</p>
+    <p *ngSwitchCase="14"> El numero es 14</p>
+    <p *ngSwitchDefault>no pos no se</p>
+</div>
+
+<hr>
+<h1>ng-container</h1>
+<ng-container *ngIf="edad>=18">Se cumple la condicion</ng-container>
+
+<h1>ng-for estatico</h1>
+<ul>
+    <li *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]; let i=index">
+        Posicion {{i}} - numero: {{item}}
+    </li>
+</ul>
+
+
+<h1>ng-for dinamico</h1>
+<ul>
+    <li *ngFor="let pais of paises; let i=index; first as primero">
+        {{pais.nombre}} con dominio {{pais.dominio}} <span *ngIf="primero">Este es el primer pais de la lista</span>
+    </li>
+</ul>
+
+<br>
+
+<h1>ng-template dinamico</h1>
+<ul>
+    <ng-template  ngFor let-pais [ngForOf]="paises" let-i="index">
+        <li>
+            indice:{{i}} - Pais:  {{pais.nombre}} - Dominio: {{pais.dominio}} 
+        </li>
+        
+    </ng-template>
+    
+</ul>
+
+<br>
+<h1>odd y even</h1>
+
+<div *ngFor="let pais of paises; let i= index; let impar=odd; let par=even;"
+[ngClass]="{azul:par, verde:impar}">
+    <p>
+        {{i}}{{pais.nombre}}
+        <span *ngIf="impar"> es impar</span>
+        <span *ngIf="par"> es par</span>
+    </p>
+</div>
+
+<br>
+
+
+<h1>Pipes</h1>
+
+<h4>tecto sin recortar</h4>
+<p>{{texto}}</p>
+
+<h4>tecto sin Recortado</h4>
+<p>{{texto | slice:0:50}}</p>
+
+<p>{{cantidad | currency}}</p>
+
+<h4>Fecha sin formatear</h4>
+<p>{{fecha | date:'dd/MM/yyyy'}}</p>
+
+<p>{{fecha | formatearFecha}}</p>
+
