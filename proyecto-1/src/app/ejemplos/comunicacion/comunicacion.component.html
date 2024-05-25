@@ -1,0 +1,5 @@
+<h1>comunicacion entre componenetes!</h1>
+<app-comunicacion2 titulo="hola titulos" subtitulo="hola subtitulos"></app-comunicacion2>
+<app-comunicacion2 [titulo]="texto1" [subtitulo]="texto2" (valorHijo)="actualizarHijo($event)"></app-comunicacion2>
+<p>{{hijo}}</p>
+

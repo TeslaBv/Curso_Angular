@@ -1,0 +1,21 @@
+<h2>DataBinding</h2>
+<p>
+    Ejemplo boton
+    <br><br>
+    <button (click)="changeImage()" [disabled]="disabled">Press</button>
+</p>
+
+<!--<div style="background-color: {{color}};">
+        Hola
+    </div>
+-->
+    <hr>
+    <div [style]="'background-color:'+color+';'">Adios </div>
+<hr>
+
+
+
+<div>
+    <img [src]="'/assets/'+imagen" [width]="ancho" [height]="largo" alt="">
+</div>
+
